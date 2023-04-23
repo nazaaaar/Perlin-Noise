@@ -1,0 +1,26 @@
+Index: src/main/java/edu/nazaaaar/perlinnoise/heightmap/Heightmap.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/edu/nazaaaar/perlinnoise/heightmap/Heightmap.java b/src/main/java/edu/nazaaaar/perlinnoise/heightmap/Heightmap.java
+--- a/src/main/java/edu/nazaaaar/perlinnoise/heightmap/Heightmap.java	
++++ b/src/main/java/edu/nazaaaar/perlinnoise/heightmap/Heightmap.java	(date 1681272206282)
+@@ -10,8 +10,6 @@
+     private Mappable generator;
+     private int size;
+ 
+-
+-
+     public Heightmap(int MINVALUE, int MAXVALUE, int size, Mappable generator) {
+         minvalue = MINVALUE;
+         maxvalue = MAXVALUE;
+@@ -45,7 +43,7 @@
+             }
+         }
+     }
+-    static class MapArgs extends FuncArgs {
++    static public class MapArgs extends FuncArgs {
+         public MapArgs(int x, int y, int val) {
+             this.x = x;
+             this.y = y;

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="324.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.nazaaaar.perlinnoise.SettingsWindow">
+   <children>
+      <HBox prefHeight="402.0" prefWidth="940.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="326.0" prefWidth="313.0" spacing="10.0" style="-fx-background-color: #999999;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Perlin noise settings">
+                     <font>
+                        <Font name="Inter Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" style="-fx-background-color: #000000;" />
+                  <HBox>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="82.0" text="Seed:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="seed" alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="247.0" text="25062004" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="140.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="188.0" text="Start frequency:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="startFrequency" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="139.0" text="0.005" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="252.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="188.0" text="Number of octaves:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="numOctaves" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="139.0" text="8" />
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <CheckBox fx:id="useWater1" mnemonicParsing="false" selected="true" text="Use ease curve">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="284.0" text="Interptretation">
+                     <font>
+                        <Font name="Inter Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" style="-fx-background-color: #000000;" />
+                  <HBox>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="168.0" text="Resolution:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="resolution" alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="121.0" text="100" />
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <CheckBox fx:id="useWater" mnemonicParsing="false" selected="true" text="Use water">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="188.0" text="Water level:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="waterLevel" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="139.0" text="100" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="20.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="326.0" prefWidth="313.0" spacing="10.0" style="-fx-background-color: #999999;">
+               <children>
+                  <Label prefHeight="88.0" prefWidth="284.0" style="-fx-background-color: #888888;" text="Point your mouse to some property to see additional information" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Inter Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextFlow prefHeight="5.0" prefWidth="284.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextFlow>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="284.0" text="Heightmap">
+                     <font>
+                        <Font name="Inter Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" style="-fx-background-color: #000000;" />
+                  <HBox layoutX="20.0" layoutY="68.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="188.0" text="Min value:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="minValue" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="139.0" text="1" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="140.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="188.0" text="Max value:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                               </font>
+                        </Label>
+                        <TextField fx:id="maxValue" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="139.0" text="200" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="177.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="188.0" text="Size X:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="size" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="139.0" text="200" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="140.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="188.0" text="Size Z:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="size1" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="139.0" text="200" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="176.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="188.0" text="Offset X:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="size11" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="139.0" text="0" />
+                     </children>
+                     </HBox>
+                  <HBox layoutX="20.0" layoutY="212.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="188.0" text="Offset Z:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="size111" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="139.0" text="0" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="20.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="324.0" layoutY="10.0" prefHeight="326.0" prefWidth="314.0" spacing="10.0" style="-fx-background-color: #999999;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Layers">
+                     <font>
+                        <Font name="Inter Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" style="-fx-background-color: #000000;" />
+                  <HBox>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="157.0" text="Height">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="141.0" text="Color">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="68.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="Height1" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="141.0" text="103" />
+                        <ColorPicker fx:id="Color1" prefHeight="26.0" prefWidth="148.0">
+                           <value>
+                              <Color red="1.0" green="0.949999988079071" />
+                           </value></ColorPicker>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="98.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="Height2" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="141.0" text="150" />
+                        <ColorPicker fx:id="Color2" prefHeight="26.0" prefWidth="148.0">
+                           <value>
+                              <Color red="0.12821052968502045" green="0.5684210658073425" blue="0.050526317209005356" />
+                           </value></ColorPicker>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="135.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="Height3" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="141.0" text="0" />
+                        <ColorPicker fx:id="Color3" prefHeight="26.0" prefWidth="148.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="172.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="Height4" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="141.0" text="0" />
+                        <ColorPicker fx:id="Color4" prefHeight="26.0" prefWidth="148.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="208.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="Height5" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="141.0" text="0" />
+                        <ColorPicker fx:id="Color5" prefHeight="26.0" prefWidth="148.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="208.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="139.0" text="Default color:">
+                           <font>
+                              <Font name="Inter Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <ColorPicker fx:id="defaultColor" prefHeight="26.0" prefWidth="147.0">
+                           <value>
+                              <Color red="0.5894736647605896" green="0.5894736647605896" blue="0.5894736647605896" />
+                           </value></ColorPicker>
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#onGenerateClicked" prefHeight="26.0" prefWidth="388.0" text="Camera movement instruction">
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant>
+                                 <color>
+                                    <Color red="0.7252241969108582" green="0.7473683953285217" blue="0.7267004251480103" />
+                                 </color>
+                              </Light.Distant>
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <font>
+                        <Font name="Inter Regular" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="319.0" mnemonicParsing="false" onAction="#onGenerateClicked" prefHeight="26.0" prefWidth="388.0" text="Generate world">
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant>
+                                 <color>
+                                    <Color red="0.7252241969108582" green="0.7473683953285217" blue="0.7267004251480103" />
+                                 </color>
+                              </Light.Distant>
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <font>
+                        <Font name="Inter Regular" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="20.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

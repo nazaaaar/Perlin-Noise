@@ -2,15 +2,15 @@ package edu.nazaaaar.perlinnoise.heightmap;
 
 public class PerlinFBM implements Mappable {
 
-    protected int numOctaves = 64;
-    protected double startAmplitude = 1.0;
-    protected double startFrequency = 0.003d;
-    protected double amplitudeMultiplier = 0.5d;
-    protected double frequencyMultiplier = 2.0d;
+    int numOctaves;
+    double startAmplitude = 1;
+    double startFrequency;
+    double amplitudeMultiplier = 0.5;
+    double frequencyMultiplier = 2;
     public PerlinFBM(long seed){
         noise=new PerlinNoise(seed);
     }
-    protected PerlinNoise noise;
+    PerlinNoise noise;
     @Override
     public double generate(double x, double y) {
         double amplitude = startAmplitude;

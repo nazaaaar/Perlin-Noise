@@ -19,15 +19,25 @@ public class Settings {
             ){
     }
 
-    static public record PerlinFBM_Config(int numOctaves, double startAmplitude,
-                                          double startFrequency, double amplitudeMultiplier,
-                                          double frequencyMultiplier, long seed){
+    static public record PerlinFBM_Config(int numOctaves,
+                                          double startFrequency,
+                                          long seed,
+
+                                          boolean useEaseCurve){
     };
-    static record HeightmapConfig(int MINVALUE, int MAXVALUE, int size) {
+    static record HeightmapConfig(int MINVALUE,
+                                  int MAXVALUE,
+                                  int sizeX,
+                                  int sizeY,
+                                  double offsetX,
+                                  double offsetY) {
     }
 
-    static record MapInterpreterConfig(int RESOLUTION, int waterLevel, boolean isWaterUsed,
-                                               Map<Integer, Color> colorMap, Color defaultColor) {
+    static record MapInterpreterConfig(int RESOLUTION,
+                                       int waterLevel,
+                                       boolean isWaterUsed,
+                                       Map<Integer, Color> colorMap,
+                                       Color defaultColor) {
     }
 
     public void create(SettingsConfig settingsConfig){
@@ -41,18 +51,20 @@ public class Settings {
         else perlinFBM.setSeed(settingsConfig.perlinFBM_config.seed);
 
         perlinFBM.setNumOctaves(settingsConfig.perlinFBM_config.numOctaves);
-        perlinFBM.setFrequencyMultiplier(settingsConfig.perlinFBM_config.frequencyMultiplier);
         perlinFBM.setStartFrequency(settingsConfig.perlinFBM_config.startFrequency);
-        perlinFBM.setStartAmplitude(settingsConfig.perlinFBM_config.startAmplitude);
-        perlinFBM.setAmplitudeMultiplier(settingsConfig.perlinFBM_config.amplitudeMultiplier);
+        perlinFBM.getNoise().setUseEaseCurve(settingsConfig.perlinFBM_config.useEaseCurve);
 
         if (heightmap==null)heightmap = new Heightmap(settingsConfig.heightmapConfig.MINVALUE,settingsConfig.heightmapConfig.MAXVALUE,
-                settingsConfig.heightmapConfig.size,perlinFBM);
+                settingsConfig.heightmapConfig.sizeX, settingsConfig.heightmapConfig.sizeY,perlinFBM);
         else {
              heightmap.setMaxvalue(settingsConfig.heightmapConfig.MAXVALUE);
              heightmap.setMinvalue(settingsConfig.heightmapConfig.MINVALUE);
-             heightmap.setSize(settingsConfig.heightmapConfig.size);
+             heightmap.setSizeX(settingsConfig.heightmapConfig.sizeX);
+             heightmap.setSizeY(settingsConfig.heightmapConfig.sizeY);
         }
+
+        heightmap.setOffsetX(settingsConfig.heightmapConfig.offsetX);
+        heightmap.setOffsetY(settingsConfig.heightmapConfig.offsetY);
 
         if (mapInterpreter3D==null) mapInterpreter3D = new MapInterpreter3D(
                 settingsConfig.mapInterpreterConfig.RESOLUTION,

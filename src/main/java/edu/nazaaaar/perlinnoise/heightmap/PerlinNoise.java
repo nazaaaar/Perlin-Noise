@@ -12,6 +12,16 @@ public class PerlinNoise implements Mappable {
 
     int[] permutation;
 
+    public boolean isUseEaseCurve() {
+        return useEaseCurve;
+    }
+
+    public void setUseEaseCurve(boolean useEaseCurve) {
+        this.useEaseCurve = useEaseCurve;
+    }
+
+    private boolean useEaseCurve = true;
+
     private void makePermutation(){
         permutation = new int[512];
         for (int i = 0; i < permutation.length/2; i++) {
@@ -97,10 +107,12 @@ public class PerlinNoise implements Mappable {
                 distances.bottomLeft.dot(gradients.bottomLeft)
         );
 
-        double
-                u = fade(x),
-                v = fade(y);
-
+        double u,v;
+        if (useEaseCurve) {
+            u = fade(x);
+            v = fade(y);
+        }
+        else {u=x;v=y;}
         return  0.5 * (lerp(u,
                 lerp(v, dotProducts.bottomLeft,dotProducts.topLeft),
                 lerp(v,dotProducts.bottomRight,dotProducts.topRight))/ Math.sqrt(0.5d)

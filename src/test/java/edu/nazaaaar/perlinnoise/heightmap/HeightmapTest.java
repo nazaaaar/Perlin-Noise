@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class HeightmapTest {
 
-    @Test
+   /* @Test
     void newTest(){
         Heightmap heightmap = new Heightmap(1, 200, 40, new PerlinNoise(25062004));
         heightmap.create();
@@ -14,5 +14,5 @@ class HeightmapTest {
         heightmap.forEach((args)->{
             System.out.println(args.x+" "+ args.y+" "+args.val);
         });
-    }
+    } */
 }

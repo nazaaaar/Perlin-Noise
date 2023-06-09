@@ -51,7 +51,7 @@ public class MapInterpreter3D extends Application {
         scene.setFill(Color.LIGHTBLUE);
         CameraMovement.CameraConfig cameraConfig = new CameraMovement.CameraConfig(
                 20*RESOLUTION,
-                heightmap.getSize()*RESOLUTION+13000,
+                heightmap.getSizeX()*RESOLUTION+13000,
                 (400)*RESOLUTION,
                 10*RESOLUTION-13000,
                 -40,
